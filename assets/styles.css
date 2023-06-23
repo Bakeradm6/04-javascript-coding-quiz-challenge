@@ -3,7 +3,7 @@ body {
 }
 
 h1{
-
+  text-align: center;
 }
 
 header {
@@ -21,13 +21,23 @@ header {
 
 }
 
+#time-header {
+
+}
+
+#time-left{
+
+}
 
 .button {
 
 }
 
 .quiz-container {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .quiz-end-screen {
