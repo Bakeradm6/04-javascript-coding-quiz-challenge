@@ -1,5 +1,6 @@
 body {
     background: grey;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
@@ -29,8 +30,23 @@ header {
 
 h2 span {
     background: lightgrey;
+    border: 2px solid blue;
     padding: 50px;
     border-radius: 20px;
+}
+
+h3 {
+    background: lightgrey;
+ border: 2px solid blue;
+ padding: 20px 30px;
+ border-radius: 20px;
+}
+
+.quiz-end-screen p{
+background: lightgrey;
+ border: 2px solid blue;
+ padding: 20px 30px;
+ border-radius: 20px;
 }
 
 #start-button {
@@ -53,6 +69,10 @@ h2 span {
 
 #time-remaining{
   
+}
+
+#correct-answers-text {
+
 }
 
 .button {
