@@ -1,3 +1,39 @@
 body {
     background: grey;
 }
+
+h1{
+
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#start-button {
+
+}
+
+#view-high-scores {
+
+}
+
+
+.button {
+
+}
+
+.quiz-container {
+
+}
+
+.quiz-end-screen {
+
+}
+
+.hidden{
+
+}
