@@ -8,28 +8,22 @@
 </head>
 <body>
     <header>
-       
-            <a id="view-high-scores" href="TODO">View High Scores</a>
-        
-
-        
-            <p id="time-header">Time:<span id="time-left">60</span></p>
-        
+        <a id="view-high-scores" href="TODO">View High Scores</a>
+        <p id="time-header">Time:<span id="time-remaining">60</span></p>
     </header>
 
-    <h1>Javascript Coding Quiz</h1>
+    <h1><span>Javascript Coding Quiz</span></h1>
     <!-- On start button click, this h1 will addClass("hidden") -->
-    
 
     <div class="quiz-container">
         <h2>Try to answer the code related questions within the time limit. Keep in mind that incorrect answers will penalize you 10 seconds.</h2>
         <button class="button" id="start-button">Begin Quiz</button>
-
+        <!-- The h2 text will change, and 4 li buttons will be added -->
     </div>
 
     <div class="quiz-end-screen hidden">
         <h3> Your Final Score Is: <span id=correct-answers-text>0</span></h3>
-        <p>Enter your initials here: <input type="text" id="initials-box"></p>
+        <p>Enter your initials here: <input type="text" id="initials-box"><button id=submit-initials-button class="button">Submit</button></p>
     <!-- change H1 text to All Done!, remove hidden class -->
     </div>
 

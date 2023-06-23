@@ -2,8 +2,19 @@ body {
     background: grey;
 }
 
-h1{
+
+ h1 {
   text-align: center;
+  color: grey;
+  text-shadow: black 0px 1px;
+ }
+
+h1 span{
+  text-align: center;
+  border: 2px solid blue;
+  border-radius: 10px;
+  background: red;
+  padding: 10px 30px;
 }
 
 header {
@@ -11,6 +22,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-size: 150%;
 }
 
 #start-button {
@@ -25,8 +37,8 @@ header {
 
 }
 
-#time-left{
-
+#time-remaining{
+  
 }
 
 .button {
@@ -34,11 +46,13 @@ header {
 }
 
 .quiz-container {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: lightgrey;
+  padding: 50px;
 }
 
 .quiz-end-screen {
@@ -49,6 +63,6 @@ header {
 }
 
 
-.hidden{
-
-}
+/* .hidden{
+  display: none;
+} */
