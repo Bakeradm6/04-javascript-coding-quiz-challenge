@@ -6,7 +6,7 @@ body {
 
  h1 {
   text-align: center;
-  color: grey;
+  color: lightgrey;
   text-shadow: black 0px 1px;
   padding: 20px;
   font-size: 300%;
@@ -67,16 +67,15 @@ background: lightgrey;
  border-radius: 20px;
 }
 
-#time-remaining{
-  
+#time-remaining-text{
 }
 
 #correct-answers-text {
-
+  font-size: 150%;
 }
 
 .button {
-
+  border-radius: 5px;
 }
 
 .quiz-container {
