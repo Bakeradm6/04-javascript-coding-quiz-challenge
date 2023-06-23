@@ -1,3 +1,5 @@
+/* I recognize that there are some things in here than can be set to a variable instead of using the same style again and again. I did not originally plan on them to all use the same styles, and since this is an assignment, it will not change in the future, so I did not go back and assign variables */
+
 body {
     background: grey;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
