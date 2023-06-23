@@ -7,6 +7,8 @@ body {
   text-align: center;
   color: grey;
   text-shadow: black 0px 1px;
+  padding: 20px;
+  font-size: 300%;
  }
 
 h1 span{
@@ -26,15 +28,21 @@ header {
 }
 
 #start-button {
-
+ font-size: 20px;
 }
 
 #view-high-scores {
-
+ background: lightgrey;
+ border: 2px solid blue;
+ padding: 20px 30px;
+ border-radius: 20px;
 }
 
 #time-header {
-
+ background: lightgrey;
+ border: 2px solid blue;
+ padding: 20px 30px;
+ border-radius: 20px;
 }
 
 #time-remaining{
