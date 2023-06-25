@@ -5,7 +5,6 @@ body {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
  h1 {
   text-align: center;
   color: lightgrey;
@@ -35,6 +34,11 @@ h2 span {
     border: 2px solid blue;
     padding: 50px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 h3 {
@@ -45,7 +49,7 @@ h3 {
 }
 
 .quiz-end-screen p{
-background: lightgrey;
+ background: lightgrey;
  border: 2px solid blue;
  padding: 20px 30px;
  border-radius: 20px;
@@ -53,6 +57,7 @@ background: lightgrey;
 
 #start-button {
  font-size: 20px;
+position:relative;
 }
 
 #view-high-scores {
@@ -80,6 +85,17 @@ background: lightgrey;
   border-radius: 5px;
 }
 
+#start-screen-text{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  position: relative;
+  white-space:nowrap;
+}
+
 .quiz-container {
   text-align: center;
   display: flex;
@@ -87,6 +103,11 @@ background: lightgrey;
   justify-content: center;
   align-items: center;
   padding: 50px;
+  background: lightgrey;
+  border: 2px solid blue;
+  padding: 20px 30px;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .quiz-end-screen {
