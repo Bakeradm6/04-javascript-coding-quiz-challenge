@@ -19,6 +19,9 @@ var startBtn= document.getElementById("start-button")
 var submitScoreBtn= document.getElementById("submit-initials-button")
 var viewScoresBtn= document.getElementById("view-high-scores")
 
+//needed JS variables
+var currentQuestionNum= 0
+
 var questionsList=[
  {questionText: "This returns a true or false value:",
     answerText:["Boolean","Toolean","Yoolian","Hooligan"],
@@ -35,58 +38,21 @@ correctAnswer: "Array"
 ]
 
 function getChoices() {
+    var currentQuestion= questionsList[currentQuestionNum]
 
-} //push answers variable in questions object into each button
+     answer1Btn.textContent= currentQuestion(answerText[0])
+     answer2Btn.textContent= currentQuestion(answerText[1])
+     answer3Btn.textContent= currentQuestion(answerText[2])
+     answer4Btn.textContent= currentQuestion(answerText[3])
+ 
+} //push answers variable in questions object into each button, increment currentQuestionNum by 1
 
 function getQuestion() {
-
+ //takes questionText and puts it into #question-text
 } //adds questions text from object into page
 
 function selectAnswer() {
-
-} //function for when answer button is pressed, check if button text is equal to correctAnswer
-
-function saveScore() {
-
-} //used at the end to save score into high scores
-
-function startQuiz() {
- startTimer()
-} //used when start button is clicked
-
-function startTimer() {
-
-} //begins decrementing the timer
-
-function stopTimer() {
-
-} //ends deccrementing the timer, saves the time left as a string variable
-
-function viewHighScores() {
-    //used at the start screen to view high scores, sett everything but quiz end screen to addClass("hidden")
-}
-//set event
-
-startBtn.addEventListener('click', startQuiz())
-answerButtons.addEventListener("click", selectAnswer())
-submitScoreBtn.addEventListener("click", saveScore())
-
-
-//start button pressed
-  //h1 is addClass("hidden")
-  //start-screen-text is addClass("hidden")
-  //quiz-container is removeClass("hidden")
-
-// first question generates
-  //questionText is pulled from object and added to #question-text
-  //answer[0] text is pulled into answer-1-button
-  //answer[1] text is pulled into answer-2-button
-  //answer[2] text is pulled into answer-3-button
-  //answer[3] text is pulled into answer-4-button
-
-//an answer button is selected
-
-//it is right or wrong
+ //it is right or wrong
  //right if button pressed text is equal to 'answer' variable in "question" object
  //if correct
   //pull next question
@@ -96,11 +62,35 @@ submitScoreBtn.addEventListener("click", saveScore())
 //if no more questions, then display quiz-end-screen
   //addClass("hidden") to quiz-container
   //removeClass('hidden") to quiz-end-screen
+} //function for when answer button is pressed, check if button text is equal to correctAnswer
 
-
-
-//quiz-end-screen will display
-
-//user submits initials into High Scores
+function saveScore() {
+ //user submits initials into High Scores
   //initials are taken as a string and concact with strignified timer value then saved into local storage
   //when clicking high scores link at top, addClass("hidden") to all other fields except high-score-screen
+} //used at the end to save score into high scores
+
+function startQuiz() {
+    //start button pressed
+  //h1 is addClass("hidden")
+  //start-screen-text is addClass("hidden")
+  //quiz-container is removeClass("hidden")
+ startTimer()
+} //used when start button is clicked
+
+function startTimer() {
+ 
+} //begins decrementing the timer
+
+function stopTimer() {
+ 
+} //ends deccrementing the timer, saves the time left as a string variable
+ 
+function viewHighScores() {
+    //used at the start screen to view high scores, set everything but quiz end screen to addClass("hidden")
+}
+
+
+startBtn.addEventListener('click', startQuiz())
+answerButtons.addEventListener("click", selectAnswer())
+submitScoreBtn.addEventListener("click", saveScore())
