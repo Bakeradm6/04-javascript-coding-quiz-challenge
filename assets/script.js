@@ -1,6 +1,6 @@
 //screens
-var endScreen= document.getElementsByClassName("quiz-end-screen")
-var quizScreen= document.getElementsByClassName("quiz-container")
+var endScreen= document.getElementById("quiz-end-screen")
+var quizScreen= document.getElementById("quiz-container")
 var startScreen= document.getElementById("start-screen-text")
 var scoreScreen= document.getElementById("high-scores-screen")
 
