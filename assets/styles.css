@@ -130,6 +130,7 @@ position:relative;
   padding: 20px;
 }
 
-/* .hidden{
-  display: none;
-} */
+.hidden {
+  display: none !important;
+}
+/* I determined that my other styles were interferring with this, so found the !important rule on W3Schools */

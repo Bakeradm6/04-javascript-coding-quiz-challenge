@@ -82,10 +82,7 @@ function selectAnswer(event) {
     } else{
         timeRemaining-=10
          alert("Wrong Answer!")
-    } console.log(typeof selectedAnswer) 
-     console.log(typeof currentQuestion.correctAnswer)
-     console.log(selectedAnswer)
-     console.log(currentQuestion.correctAnswer)
+    }
 } //function for when answer button is pressed, check if button text is equal to correctAnswer
 
 function saveScore() {
@@ -95,9 +92,9 @@ function saveScore() {
 } //used at the end to save score into high scores
 
 function startQuiz() {
-  //h1 is addClass("hidden")
-  //start-screen-text is addClass("hidden")
-  //quiz-container is removeClass("hidden")
+ h1.classList.add("hidden")
+ startScreen.classList.add("hidden")
+ quizScreen.classList.remove("hidden")
  timeRemainingText.textContent= timeRemaining
  startTimer()
  displayNextQuestion()
