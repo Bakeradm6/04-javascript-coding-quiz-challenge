@@ -58,10 +58,6 @@ function displayNextQuestion () {
  if (currentQuestionNum<questionsList.length){
  getChoices()
  getQuestion()
- } else {
-    endScreen.classList.remove("hidden")
-    quizScreen.classList.add("hidden")
-    clearInterval(timerInterval)
  }
  finalScore.innerText= timeRemaining
 } //controls whether to generate next question, If no more questions, stopTimer(), change hidden class around
@@ -80,6 +76,8 @@ function selectAnswer(event) {
                 timeRemainingText.textContent = timeRemaining
                 quizScreen.classList.add("hidden")
                 endScreen.classList.remove("hidden")
+                timer.classList.add("hidden")
+                viewScoresBtn.classList.add("hidden")
             }
         displayNextQuestion()
     } else{
@@ -118,7 +116,6 @@ function startTimer() {
       }, 1000)
     } //begins decrementing the timer
 
- 
 function viewHighScores() {
     h1.classList.add("hidden")
     quizScreen.classList.add("hidden")
