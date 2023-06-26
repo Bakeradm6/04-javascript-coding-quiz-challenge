@@ -60,7 +60,7 @@ function displayNextQuestion () {
  getQuestion()
  }
  finalScore.innerText= timeRemaining
-} //controls whether to generate next question, If no more questions, stopTimer(), change hidden class around
+}
 
 function selectAnswer(event) {
     var selectedAnswer= event.target.innerText
@@ -82,14 +82,14 @@ function selectAnswer(event) {
         displayNextQuestion()
     } else{
         timeRemaining-=10
-         alert("Wrong Answer!")
+        alert("Wrong Answer!")
     }
 } //function for when answer button is pressed, check if button text is equal to correctAnswer
 
 function saveScore() {
  //user submits initials into High Scores
   //initials are taken as a string and concact with strignified timer value then saved into local storage
-  //when clicking high scores link at top, addClass("hidden") to all other fields except high-score-screen
+  //run viewHighScores to hide all other elements
 } //used at the end to save score into high scores
 
 function startQuiz() {
@@ -99,7 +99,7 @@ function startQuiz() {
  timeRemainingText.textContent= timeRemaining
  startTimer()
  displayNextQuestion()
-} //used when start button is clicked
+} //used when start quiz button is clicked
 
 function startTimer() {
     timeRemainingText.textContent = timeRemaining
@@ -107,15 +107,15 @@ function startTimer() {
     timerInterval = setInterval(function() {
     
         if (timeRemaining <= 0) {
-            alert("Time's Up!")
-            viewHighScores()
-          clearInterval(timerInterval)
+         alert("Time's Up!")
+         viewHighScores()
+         finalScore.innerText=0
         } else {
           timeRemaining-=1
           timeRemainingText.textContent = timeRemaining
         }
       }, 1000)
-    } //begins decrementing the timer
+} //begins decrementing the timer, if time=0, stops timer, displays alert and runs viewHighScores
 
 function viewHighScores() {
     h1.classList.add("hidden")
@@ -124,10 +124,12 @@ function viewHighScores() {
     startScreen.classList.add("hidden")
     timer.classList.add("hidden")
     scoreScreen.classList.remove("hidden")
+    endScreen.classList.remove("hidden")
     viewScoresBtn.classList.add("hidden")
+    clearInterval(timerInterval) //stops timer from continuing to run in the background
 }
 
 startBtn.addEventListener('click', startQuiz)
-for (var i=0; i<answerButtons.length;i++) {answerButtons[i].addEventListener("click", selectAnswer);}//add a for loop to add the event listener to each button
+for (var i=0; i<answerButtons.length;i++) {answerButtons[i].addEventListener("click", selectAnswer);}//add a for loop to add the event listener to each answer button
 submitScoreBtn.addEventListener("click", saveScore)
 viewScoresBtn.addEventListener("click", viewHighScores)
