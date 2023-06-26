@@ -58,8 +58,8 @@ function displayNextQuestion () {
  getChoices()
  getQuestion()
  } else {
-    quizScreen.addClass("hidden")
-    endScreen.removeClass("hidden")
+    quizScreen.classList.add("hidden")
+    endScreen.classList.remove("hidden")
     return startTimer()
  }
 } //controls whether to generate next question, If no more questions, stopTimer(), change hidden class around
@@ -67,7 +67,7 @@ function displayNextQuestion () {
 function selectAnswer(event) {
     var selectedAnswer= event.target.textContent
 
-    if (selectedAnswer===currentQuestion.correctAnswer) {
+    if (selectedAnswer==currentQuestion.correctAnswer) {
         currentQuestionNum++
         displayNextQuestion()
     } else{
@@ -114,5 +114,5 @@ function viewHighScores() {
 
 
 startBtn.addEventListener('click', startQuiz)
-answerButtons.addEventListener("click", selectAnswer)
+for (var i=0; i<answerButtons.length;i++) {answerButtons[i].addEventListener("click", selectAnswer);}//add a for loop to add the event listener to each button
 submitScoreBtn.addEventListener("click", saveScore)
