@@ -1,47 +1,64 @@
-var
-var
-var
-var
-var
-var
-var
-var questionsList[
-    {questionText: "Question text",
-    answer1: "1",
-    answer2: "2",
-    answer3: "3",
-    answer4: "4",
-    correctAnswer: "Correct Answer Test"
-},
-    {questionText: "Question text",
-    answer1: "1",
-    answer2: "2",
-    answer3: "3",
-    answer4: "4",
-    correctAnswer: "Correct Answer Test"
-},
-    {questionText: "Question text",
-    answer1: "1",
-    answer2: "2",
-    answer3: "3",
-    answer4: "4",
-    correctAnswer: "Correct Answer Test"
-}
+//screens
+var endScreen= document.getElementById("quiz-end-screen")
+var quizScreen= document.getElementById("quiz-container")
+var startScreen= document.getElementById("start-screen-text")
+var scoreScreen= document.getElementById("high-scores-screen")
+
+//visual display elements
+var timeRemaining= document.getElementById("time-remaining-text")
+var finalScore= document.getElementById("correct-answers-text")
+var questionDisplay= document.getElementById("question-text")
+
+//buttons
+var answer1Btn= document.getElementById("answer-1-button")
+var answer2Btn= document.getElementById("answer-2-button")
+var answer3Btn= document.getElementById("answer-3-button")
+var answer4Btn= document.getElementById("answer-4-button")
+var startBtn= document.getElementById("start-button")
+var submitScoreBtn= document.getElementById("submit-initials-button")
+
+var questionsList=[
+ {questionText: "This returns a true or false value:",
+    answerText:["Boolean","Toolean","Yoolian","Hooligan"],
+    correctAnswer: "Boolean"
+ },
+ {questionText: "You can use this to show something in the broswer console",
+answerText:["console.report()","console.log()","document.querySelector.console()","document.console.log()"],
+correctAnswer: "console.log()"
+ },
+ {questionText: "You use this to build a list in JavaScript",
+answerText:["Function","List Item","Ordered List","Array"],
+correctAnswer: "Array"
+ }
 ]
 
-function getChoices() //push answers variable in questions object into each button
+function getChoices() {
 
-function getQuestion() //adds questions text from object into page
+} //push answers variable in questions object into each button
 
-function selectAnswer () //used when an answer button is selected
+function getQuestion() {
 
-function saveScore() //used at the end to save score into high scores
+} //adds questions text from object into page
 
-function startQuiz() //used when start button is clicked
+function selectAnswer() {
 
-function startTimer() //begins decrementing the timer
+} //function for when answer button is pressed, check if button text is equal to correctAnswer
 
-function stopTimer() //ends deccrementing the timer, saves the time left as a string variable
+function saveScore() {
+
+} //used at the end to save score into high scores
+
+function startQuiz() {
+
+} //used when start button is clicked
+
+function startTimer() {
+
+} //begins decrementing the timer
+
+function stopTimer() {
+
+} //ends deccrementing the timer, saves the time left as a string variable
 
 //start button pressed
   //h1 is addClass("hidden")
