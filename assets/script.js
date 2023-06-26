@@ -15,7 +15,7 @@ var answer1Btn= document.getElementById("answer-1-button")
 var answer2Btn= document.getElementById("answer-2-button")
 var answer3Btn= document.getElementById("answer-3-button")
 var answer4Btn= document.getElementById("answer-4-button")
-var answerButtons= document.getElementsByClassName("answer-button")
+var answerButtons= document.querySelectorAll(".answer-button")
 var startBtn= document.getElementById("start-button")
 var submitScoreBtn= document.getElementById("submit-initials-button")
 var viewScoresBtn= document.getElementById("view-high-scores")
@@ -60,21 +60,32 @@ function displayNextQuestion () {
  } else {
     quizScreen.classList.add("hidden")
     endScreen.classList.remove("hidden")
-    return startTimer()
+    clearInterval(timerInterval)
  }
+ finalScore.innerText= timeRemaining
 } //controls whether to generate next question, If no more questions, stopTimer(), change hidden class around
 
 function selectAnswer(event) {
-    var selectedAnswer= event.target.textContent
+    var selectedAnswer= event.target.innerText
+
+    currentQuestion = questionsList[currentQuestionNum]
 
     if (selectedAnswer==currentQuestion.correctAnswer) {
-        currentQuestionNum++
+        if (currentQuestionNum<questionsList.length-1) {
+            currentQuestionNum++
+            currentQuestion= questionsList[currentQuestionNum]}
+            else { 
+                clearInterval(timerInterval)
+                timeRemainingText.textContent = timeRemaining
+            }
         displayNextQuestion()
     } else{
-        timeRemaining-10
-        currentQuestionNum++
-        displayNextQuestion()
-    }
+        timeRemaining-=10
+         alert("Wrong Answer!")
+    } console.log(typeof selectedAnswer) 
+     console.log(typeof currentQuestion.correctAnswer)
+     console.log(selectedAnswer)
+     console.log(currentQuestion.correctAnswer)
 } //function for when answer button is pressed, check if button text is equal to correctAnswer
 
 function saveScore() {
