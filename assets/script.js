@@ -22,6 +22,7 @@ var viewScoresBtn= document.getElementById("view-high-scores")
 //needed JS variables
 var currentQuestionNum= 0
 var timeRemaining= 60
+var timerInterval;
 
 var questionsList=[
  {questionText: "This returns a true or false value:",
@@ -86,37 +87,34 @@ function saveScore() {
 } //used at the end to save score into high scores
 
 function startQuiz() {
-
-
-
   //h1 is addClass("hidden")
   //start-screen-text is addClass("hidden")
   //quiz-container is removeClass("hidden")
+ timeRemainingText.textContent= timeRemaining
  startTimer()
 } //used when start button is clicked
 
 function startTimer() {
-    var timerInterval = setInterval(function() {
-        timeRemainingText.textContent = timeRemaining
+    timeRemainingText.textContent = timeRemaining
+
+    timerInterval = setInterval(function() {
     
         if (timeRemaining <= 0) {
           clearInterval(timerInterval)
         
         } else {
-          timeRemaining--
+          timeRemaining-=1
+          timeRemainingText.textContent = timeRemaining
         }
       }, 1000)
     } //begins decrementing the timer
 
-function stopTimer() {
-
-} //ends deccrementing the timer, saves the time left as a string variable
  
 function viewHighScores() {
     //used at the start screen to view high scores, set everything but quiz end screen to addClass("hidden")
 }
 
 
-startBtn.addEventListener('click', startQuiz())
-answerButtons.addEventListener("click", selectAnswer())
-submitScoreBtn.addEventListener("click", saveScore())
+startBtn.addEventListener('click', startQuiz)
+answerButtons.addEventListener("click", selectAnswer)
+submitScoreBtn.addEventListener("click", saveScore)
