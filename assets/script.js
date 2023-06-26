@@ -19,6 +19,7 @@ var answerButtons= document.querySelectorAll(".answer-button")
 var startBtn= document.getElementById("start-button")
 var submitScoreBtn= document.getElementById("submit-initials-button")
 var viewScoresBtn= document.getElementById("view-high-scores")
+var timer= document.getElementById("time-header")
 
 //needed JS variables
 var currentQuestionNum= 0
@@ -58,8 +59,8 @@ function displayNextQuestion () {
  getChoices()
  getQuestion()
  } else {
-    quizScreen.classList.add("hidden")
     endScreen.classList.remove("hidden")
+    quizScreen.classList.add("hidden")
     clearInterval(timerInterval)
  }
  finalScore.innerText= timeRemaining
@@ -77,6 +78,8 @@ function selectAnswer(event) {
             else { 
                 clearInterval(timerInterval)
                 timeRemainingText.textContent = timeRemaining
+                quizScreen.classList.add("hidden")
+                endScreen.classList.remove("hidden")
             }
         displayNextQuestion()
     } else{
@@ -117,10 +120,17 @@ function startTimer() {
 
  
 function viewHighScores() {
-    //used at the start screen to view high scores, set everything but quiz end screen to addClass("hidden")
+    h1.classList.add("hidden")
+    quizScreen.classList.add("hidden")
+    endScreen.classList.add("hidden")
+    startScreen.classList.add("hidden")
+    timer.classList.add("hidden")
+    scoreScreen.classList.remove("hidden")
+    viewScoresBtn.classList.add("hidden")
 }
 
 
 startBtn.addEventListener('click', startQuiz)
 for (var i=0; i<answerButtons.length;i++) {answerButtons[i].addEventListener("click", selectAnswer);}//add a for loop to add the event listener to each button
 submitScoreBtn.addEventListener("click", saveScore)
+viewScoresBtn.addEventListener("click", viewHighScores)
