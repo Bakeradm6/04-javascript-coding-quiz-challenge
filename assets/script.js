@@ -43,20 +43,20 @@ correctAnswer: "Array"
 var currentQuestion= questionsList[currentQuestionNum]
 
 function getChoices() {
-     answer1Btn.textContent= currentQuestion(answerText[0])
-     answer2Btn.textContent= currentQuestion(answerText[1])
-     answer3Btn.textContent= currentQuestion(answerText[2])
-     answer4Btn.textContent= currentQuestion(answerText[3])
+     answer1Btn.textContent= currentQuestion.answerText[0]
+     answer2Btn.textContent= currentQuestion.answerText[1]
+     answer3Btn.textContent= currentQuestion.answerText[2]
+     answer4Btn.textContent= currentQuestion.answerText[3]
 } //push answers variable in questions object into each button
 
 function getQuestion() {
- //takes questionText and puts it into #question-text
+ questionDisplay.innerText= currentQuestion.questionText
 } //adds questions text from object into page
 
 function displayNextQuestion () {
  if (currentQuestionNum<questionsList.length){
  getChoices()
- getAnswer()
+ getQuestion()
  } else {
     quizScreen.addClass("hidden")
     endScreen.removeClass("hidden")
@@ -89,6 +89,7 @@ function startQuiz() {
   //quiz-container is removeClass("hidden")
  timeRemainingText.textContent= timeRemaining
  startTimer()
+ displayNextQuestion()
 } //used when start button is clicked
 
 function startTimer() {
