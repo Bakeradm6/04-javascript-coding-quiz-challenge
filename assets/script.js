@@ -107,8 +107,9 @@ function startTimer() {
     timerInterval = setInterval(function() {
     
         if (timeRemaining <= 0) {
+            alert("Time's Up!")
+            viewHighScores()
           clearInterval(timerInterval)
-        
         } else {
           timeRemaining-=1
           timeRemainingText.textContent = timeRemaining
@@ -125,7 +126,6 @@ function viewHighScores() {
     scoreScreen.classList.remove("hidden")
     viewScoresBtn.classList.add("hidden")
 }
-
 
 startBtn.addEventListener('click', startQuiz)
 for (var i=0; i<answerButtons.length;i++) {answerButtons[i].addEventListener("click", selectAnswer);}//add a for loop to add the event listener to each button
