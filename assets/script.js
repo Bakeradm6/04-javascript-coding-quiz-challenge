@@ -45,11 +45,22 @@ function getChoices() {
      answer3Btn.textContent= currentQuestion(answerText[2])
      answer4Btn.textContent= currentQuestion(answerText[3])
  
-} //push answers variable in questions object into each button, increment currentQuestionNum by 1
+} //push answers variable in questions object into each button, increment currentQuestionNum by 1 in selectAnswer
 
 function getQuestion() {
  //takes questionText and puts it into #question-text
 } //adds questions text from object into page
+
+function displayNextQuestion () {
+ if (currentQuestionNum<questionsList.length){
+ getChoices()
+ getAnswer()
+ } else {
+    endScreen.removeClass("hidden")
+    quizScreen.addClass("hidden")
+    stopTimer()
+ }
+} //controls whether to generate next question, if all questions have been asked, generates quiz-end-screen. If no more questions, stopTimer()
 
 function selectAnswer() {
  //it is right or wrong
@@ -62,6 +73,7 @@ function selectAnswer() {
 //if no more questions, then display quiz-end-screen
   //addClass("hidden") to quiz-container
   //removeClass('hidden") to quiz-end-screen
+  //increment currentQuestionNum by 1 in selectAnswer
 } //function for when answer button is pressed, check if button text is equal to correctAnswer
 
 function saveScore() {
