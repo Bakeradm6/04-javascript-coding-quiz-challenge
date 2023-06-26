@@ -56,24 +56,24 @@ function displayNextQuestion () {
  getChoices()
  getAnswer()
  } else {
-    endScreen.removeClass("hidden")
     quizScreen.addClass("hidden")
+    endScreen.removeClass("hidden")
     stopTimer()
  }
-} //controls whether to generate next question, if all questions have been asked, generates quiz-end-screen. If no more questions, stopTimer()
+} //controls whether to generate next question, If no more questions, stopTimer(), change hidden class around
 
-function selectAnswer() {
- //it is right or wrong
- //right if button pressed text is equal to 'answer' variable in "question" object
- //if correct
-  //pull next question
- //else
-  //decrement timer 10
-  //pull next question
-//if no more questions, then display quiz-end-screen
-  //addClass("hidden") to quiz-container
-  //removeClass('hidden") to quiz-end-screen
-  //increment currentQuestionNum by 1 in selectAnswer
+function selectAnswer(event) {
+    var currentQuestion= questionsList[currentQuestionNum]
+    var selectedAnswer= event.target.textContent
+
+    if (selectedAnswer===currentQuestion.correctAnswer) {
+        currentQuestionNum++
+        displayNextQuestion()
+    } else{
+        timeRemaining-10
+        currentQuestionNum++
+        displayNextQuestion()
+    }
 } //function for when answer button is pressed, check if button text is equal to correctAnswer
 
 function saveScore() {
