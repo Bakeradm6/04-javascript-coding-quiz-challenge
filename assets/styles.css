@@ -48,7 +48,7 @@ h3 {
  border-radius: 20px;
 }
 
-.quiz-end-screen p{
+#quiz-end-screen p{
  background: lightgrey;
  border: 2px solid blue;
  padding: 20px 30px;
@@ -96,7 +96,7 @@ position:relative;
   white-space:nowrap;
 }
 
-.quiz-container {
+#quiz-container {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -110,7 +110,7 @@ position:relative;
   padding: 20px;
 }
 
-.quiz-end-screen {
+#quiz-end-screen {
   display: flex;
   flex-direction: column;
   align-items: center;

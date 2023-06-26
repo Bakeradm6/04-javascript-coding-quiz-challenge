@@ -8,6 +8,7 @@ var scoreScreen= document.getElementById("high-scores-screen")
 var timeRemainingText= document.getElementById("time-remaining-text")
 var finalScore= document.getElementById("correct-answers-text")
 var questionDisplay= document.getElementById("question-text")
+var h1= document.querySelector("h1")
 
 //buttons
 var answer1Btn= document.getElementById("answer-1-button")
@@ -39,16 +40,13 @@ correctAnswer: "Array"
  }
 ]
 
-
+var currentQuestion= questionsList[currentQuestionNum]
 
 function getChoices() {
-    var currentQuestion= questionsList[currentQuestionNum]
-
      answer1Btn.textContent= currentQuestion(answerText[0])
      answer2Btn.textContent= currentQuestion(answerText[1])
      answer3Btn.textContent= currentQuestion(answerText[2])
      answer4Btn.textContent= currentQuestion(answerText[3])
- 
 } //push answers variable in questions object into each button
 
 function getQuestion() {
@@ -62,12 +60,11 @@ function displayNextQuestion () {
  } else {
     quizScreen.addClass("hidden")
     endScreen.removeClass("hidden")
-    stopTimer()
+    return startTimer()
  }
 } //controls whether to generate next question, If no more questions, stopTimer(), change hidden class around
 
 function selectAnswer(event) {
-    var currentQuestion= questionsList[currentQuestionNum]
     var selectedAnswer= event.target.textContent
 
     if (selectedAnswer===currentQuestion.correctAnswer) {
