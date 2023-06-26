@@ -1,6 +1,6 @@
 //screens
-var endScreen= document.getElementById("quiz-end-screen")
-var quizScreen= document.getElementById("quiz-container")
+var endScreen= document.getElementsByClassName("quiz-end-screen")
+var quizScreen= document.getElementsByClassName("quiz-container")
 var startScreen= document.getElementById("start-screen-text")
 var scoreScreen= document.getElementById("high-scores-screen")
 
@@ -14,15 +14,17 @@ var answer1Btn= document.getElementById("answer-1-button")
 var answer2Btn= document.getElementById("answer-2-button")
 var answer3Btn= document.getElementById("answer-3-button")
 var answer4Btn= document.getElementById("answer-4-button")
+var answerButtons= document.getElementsByClassName("answer-button")
 var startBtn= document.getElementById("start-button")
 var submitScoreBtn= document.getElementById("submit-initials-button")
+var viewScoresBtn= document.getElementById("view-high-scores")
 
 var questionsList=[
  {questionText: "This returns a true or false value:",
     answerText:["Boolean","Toolean","Yoolian","Hooligan"],
     correctAnswer: "Boolean"
  },
- {questionText: "You can use this to show something in the broswer console",
+ {questionText: "You can use this to show something in the broswer console using JavaScript",
 answerText:["console.report()","console.log()","document.querySelector.console()","document.console.log()"],
 correctAnswer: "console.log()"
  },
@@ -49,7 +51,7 @@ function saveScore() {
 } //used at the end to save score into high scores
 
 function startQuiz() {
-
+ startTimer()
 } //used when start button is clicked
 
 function startTimer() {
@@ -59,6 +61,16 @@ function startTimer() {
 function stopTimer() {
 
 } //ends deccrementing the timer, saves the time left as a string variable
+
+function viewHighScores() {
+    //used at the start screen to view high scores, sett everything but quiz end screen to addClass("hidden")
+}
+//set event
+
+startBtn.addEventListener('click', startQuiz())
+answerButtons.addEventListener("click", selectAnswer())
+submitScoreBtn.addEventListener("click", saveScore())
+
 
 //start button pressed
   //h1 is addClass("hidden")
