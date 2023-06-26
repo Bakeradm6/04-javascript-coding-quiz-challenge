@@ -5,7 +5,7 @@ var startScreen= document.getElementById("start-screen-text")
 var scoreScreen= document.getElementById("high-scores-screen")
 
 //visual display elements
-var timeRemaining= document.getElementById("time-remaining-text")
+var timeRemainingText= document.getElementById("time-remaining-text")
 var finalScore= document.getElementById("correct-answers-text")
 var questionDisplay= document.getElementById("question-text")
 
@@ -21,6 +21,7 @@ var viewScoresBtn= document.getElementById("view-high-scores")
 
 //needed JS variables
 var currentQuestionNum= 0
+var timeRemaining= 60
 
 var questionsList=[
  {questionText: "This returns a true or false value:",
@@ -37,6 +38,8 @@ correctAnswer: "Array"
  }
 ]
 
+
+
 function getChoices() {
     var currentQuestion= questionsList[currentQuestionNum]
 
@@ -45,7 +48,7 @@ function getChoices() {
      answer3Btn.textContent= currentQuestion(answerText[2])
      answer4Btn.textContent= currentQuestion(answerText[3])
  
-} //push answers variable in questions object into each button, increment currentQuestionNum by 1 in selectAnswer
+} //push answers variable in questions object into each button
 
 function getQuestion() {
  //takes questionText and puts it into #question-text
@@ -83,7 +86,9 @@ function saveScore() {
 } //used at the end to save score into high scores
 
 function startQuiz() {
-    //start button pressed
+
+
+
   //h1 is addClass("hidden")
   //start-screen-text is addClass("hidden")
   //quiz-container is removeClass("hidden")
@@ -91,11 +96,20 @@ function startQuiz() {
 } //used when start button is clicked
 
 function startTimer() {
- 
-} //begins decrementing the timer
+    var timerInterval = setInterval(function() {
+        timeRemainingText.textContent = timeRemaining
+    
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval)
+        
+        } else {
+          timeRemaining--
+        }
+      }, 1000)
+    } //begins decrementing the timer
 
 function stopTimer() {
- 
+
 } //ends deccrementing the timer, saves the time left as a string variable
  
 function viewHighScores() {
