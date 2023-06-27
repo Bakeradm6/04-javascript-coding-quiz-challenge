@@ -88,14 +88,18 @@ function selectAnswer(event) {
 } //function for when answer button is pressed, check if button text is equal to correctAnswer
 
 function saveScore() {
- //user submits initials into High Scores
-  //initials are taken as a string and 
-  //concact with strignified timer value 
-  //with a dash in the middle
-  //then save into local storage
-  //and append into the ul high-scores-list
- //run viewHighScores to hide all other elements
+ var initials=document.getElementById("initials-box").value
+ var scoreValue= initials+" - "+timeRemaining.toString()
+ localStorage.setItem("highScore", scoreValue)
+
+ var recordedScore=document.getElementById("high-scores-list")
+ var scoreItem= document.createElement("li")
+  
+ scoreItem.innerText= scoreValue
+ recordedScore.appendChild(scoreItem)
 } //used at the end to save score into high-scores-list
+
+function highScoresGenerate(){ }//needed to get the high scores list to populate after page refresh
 
 function startQuiz() {
  h1.classList.add("hidden")
