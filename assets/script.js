@@ -99,8 +99,6 @@ function saveScore() {
  recordedScore.appendChild(scoreItem)
 } //used at the end to save score into high-scores-list
 
-function highScoresGenerate(){ }//needed to get the high scores list to populate after page refresh
-
 function startQuiz() {
  h1.classList.add("hidden")
  startScreen.classList.add("hidden")
@@ -137,7 +135,7 @@ function viewHighScores() {
     viewScoresBtn.classList.add("hidden")
     finalScore.innerText= 0
     clearInterval(timerInterval) //stops timer from continuing to run in the background
-}
+}//when view high score button is clicked, hides all non needed screens and sets score to 0
 
 startBtn.addEventListener('click', startQuiz)
 for (var i=0; i<answerButtons.length;i++) {answerButtons[i].addEventListener("click", selectAnswer);}//add a for loop to add the event listener to each answer button
