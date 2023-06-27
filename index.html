@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <button id="view-high-scores">View High Scores</button>
+        <button id="view-high-scores" class="button">View High Scores</button>
         <p id="time-header">Time Remaining: <span id="time-remaining-text"></span></p>
     </header>
 
@@ -30,13 +30,13 @@
     </div>
 
     <div class="hidden" id="quiz-end-screen">
-        <h3> Your Final Score Is: <span id="correct-answers-text">test</span></h3>
+        <h3> Your Final Score Is: <span id="correct-answers-text">0</span></h3>
         <p>Enter your initials here: <input type="text" id="initials-box"><button id=submit-initials-button class="button">Submit</button></p>
     <!-- change H1 text to All Done!, remove hidden class -->
     </div>
 
     <div id="high-scores-screen" class="hidden">Best times:
-        <ul></ul>
+        <ul id="high-scores-list"></ul>
     </div>
 
     <script src="assets/script.js"></script>

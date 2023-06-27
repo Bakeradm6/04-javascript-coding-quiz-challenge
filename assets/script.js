@@ -76,6 +76,7 @@ function selectAnswer(event) {
                 timeRemainingText.textContent = timeRemaining
                 quizScreen.classList.add("hidden")
                 endScreen.classList.remove("hidden")
+                scoreScreen.classList.remove("hidden")
                 timer.classList.add("hidden")
                 viewScoresBtn.classList.add("hidden")
             }
@@ -88,9 +89,13 @@ function selectAnswer(event) {
 
 function saveScore() {
  //user submits initials into High Scores
-  //initials are taken as a string and concact with strignified timer value then saved into local storage
-  //run viewHighScores to hide all other elements
-} //used at the end to save score into high scores
+  //initials are taken as a string and 
+  //concact with strignified timer value 
+  //with a dash in the middle
+  //then save into local storage
+  //and append into the ul high-scores-list
+ //run viewHighScores to hide all other elements
+} //used at the end to save score into high-scores-list
 
 function startQuiz() {
  h1.classList.add("hidden")
@@ -126,6 +131,7 @@ function viewHighScores() {
     scoreScreen.classList.remove("hidden")
     endScreen.classList.remove("hidden")
     viewScoresBtn.classList.add("hidden")
+    finalScore.innerText= 0
     clearInterval(timerInterval) //stops timer from continuing to run in the background
 }
 
